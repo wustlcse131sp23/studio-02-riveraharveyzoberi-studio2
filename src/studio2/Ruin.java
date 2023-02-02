@@ -48,5 +48,9 @@ public class Ruin {
 				currentAmount = startAmount; 
 			}
 		}
+		ruinRateSim = 
+		expectedRuinRate = 
+		System.out.println("Ruin Rate from Simulation: " + ruinRateSim + " Expected Ruin Rate: " + expectedRuinRate);
+		
 	}
 }
