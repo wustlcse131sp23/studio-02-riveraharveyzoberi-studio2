@@ -38,6 +38,7 @@ public class Ruin {
 				System.out.println("Ruin!");
 				System.out.println("Simultion day: " + i);
 				System.out.println("Daily plays: " + dailyPlays);
+				losses++;
 				currentAmount = startAmount; 
 				}
 			if (currentAmount==winLimit) 
@@ -48,8 +49,13 @@ public class Ruin {
 				currentAmount = startAmount; 
 			}
 		}
-		ruinRateSim = 
-		expectedRuinRate = 
+		double ruinRateSim = losses / totalSimulations;
+		int expectedRuinRate = 0;
+		double alpha = (1-winChance) / winChance;
+		if (winChance = 0.5) {
+			expectedRuinRate = 1 - (startAmount / winLimit);
+		else {
+			expectedRuinRate = (Math.pow(alpha, startAmount) - Math.pow(alpha, winLimit)) / (1 - Math.pow(alpha, winLimit);
 		System.out.println("Ruin Rate from Simulation: " + ruinRateSim + " Expected Ruin Rate: " + expectedRuinRate);
 		
 	}
