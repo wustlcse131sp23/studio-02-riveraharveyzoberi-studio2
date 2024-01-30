@@ -17,6 +17,7 @@ public class Ruin {
 		int totalSimulations = in.nextInt();
 
 		int dailyPlays = 0;  
+		double losses = 0;
 		for (int i = 0; i < totalSimulations; i ++)
 		{
 			while ((currentAmount>0) && (currentAmount<winLimit)) 
@@ -50,12 +51,14 @@ public class Ruin {
 			}
 		}
 		double ruinRateSim = losses / totalSimulations;
-		int expectedRuinRate = 0;
+		double expectedRuinRate = 0;
 		double alpha = (1-winChance) / winChance;
-		if (winChance = 0.5) {
+		if (winChance == 0.5) {
 			expectedRuinRate = 1 - (startAmount / winLimit);
+		}
 		else {
-			expectedRuinRate = (Math.pow(alpha, startAmount) - Math.pow(alpha, winLimit)) / (1 - Math.pow(alpha, winLimit);
+			expectedRuinRate = (Math.pow(alpha, startAmount) - Math.pow(alpha, winLimit)) / (1 - Math.pow(alpha, winLimit));
+		}
 		System.out.println("Ruin Rate from Simulation: " + ruinRateSim + " Expected Ruin Rate: " + expectedRuinRate);
 		
 	}
